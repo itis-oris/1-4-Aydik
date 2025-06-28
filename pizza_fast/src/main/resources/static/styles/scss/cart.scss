@@ -1,0 +1,243 @@
+@use "normalize";
+@use "variables";
+@use "global";
+
+.main {
+  padding: 15vh 0;
+  min-height: calc(100vh - 200px);
+}
+
+.main-div {
+  margin: 0 auto;
+  padding: 30px 20px;
+  position: relative;
+  width: 50%;
+  min-width: 600px;
+  min-height: calc(100vh - 200px - 30vh);
+  background: var(--color-secondary);
+  border-radius: 20px;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.15);
+  color: var(--color-dark);
+
+  .title {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+    color: var(--color-dark);
+    margin-bottom: 15px;
+    position: relative;
+
+    #clearCartButton {
+      position: absolute;
+      bottom: -5px;
+      right: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: end;
+      height: 30px;
+      background: none;
+      border: none;
+      font-size: 16px;
+      white-space: nowrap;
+      color: var(--color-primary);
+      opacity: 80%;
+
+      img {
+        width: 20px;
+        height: 20px;
+        object-fit: contain;
+        margin-left: 5px;
+      }
+
+      &:hover {
+        cursor: pointer;
+        color: var(--color-selected);
+      }
+    }
+  }
+
+  hr {
+    border: 0 var(--color-dark);
+    border-style: dashed !important;
+    border-top-width: 2px;
+    opacity: 50%;
+  }
+
+  .empty-cart {
+    position: relative;
+    margin-top: 80px;
+
+    .empty-cart-title {
+      text-align: center;
+    }
+
+    a {
+      text-decoration: none;
+      color: var(--color-primary);
+      display: block;
+      text-align: center;
+    }
+  }
+
+  .not-empty-cart {
+    .products {
+      margin-bottom: 15px;
+    }
+
+    .cart-item {
+      height: 120px;
+      padding: 10px 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: stretch;
+
+      .item-photo {
+        overflow: hidden;
+        border-radius: 10px;
+        width: 140px;
+
+        img {
+          width: 100%;
+          object-fit: contain;
+        }
+      }
+
+      .item-content {
+        flex-grow: 2;
+        padding: 0 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .main-info {
+          .name-and-price {
+            display: flex;
+            justify-content: space-between;
+
+            .name {
+              font-size: 1.3rem;
+              font-weight: 600;
+            }
+
+            .price {
+              font-size: 1.6rem;
+              font-weight: 600;
+            }
+          }
+
+          .weight {
+            opacity: 70%;
+          }
+        }
+
+        .quantity-container {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          .buttonDelete {
+            width: 30px;
+            height: 30px;
+            padding: 5px;
+            background: none;
+            border: none;
+            opacity: 80%;
+
+            &:hover {
+              cursor: pointer;
+            }
+          }
+
+          .correct-quantity {
+            display: flex;
+            justify-content: end;
+            align-items: center;
+
+            .buttonMinus, .buttonPlus {
+              width: 30px;
+              height: 30px;
+              padding: 7.5px;
+              background: var(--color-primary);
+              border-radius: 10px;
+              border: none;
+              transition: all 0.3s ease;
+
+              &:hover {
+                cursor: pointer;
+                background: var(--color-selected);
+              }
+            }
+
+            .quantity {
+              width: 30px;
+              text-align: center;
+              font-size: 1.3rem;
+            }
+          }
+
+        }
+      }
+    }
+
+    .totalPrice {
+      font-size: 2rem;
+      font-weight: 600;
+      color: var(--color-dark);
+      text-align: right;
+      margin: 0 25px 10px;
+    }
+
+    form {
+      margin-top: 10px;
+
+      .input_box {
+        height: 50px;
+        width: 100%;
+        position: relative;
+        margin-top: 15px;
+
+        input {
+          height: 100%;
+          width: 100%;
+          outline: none;
+          border: 1px solid lightgrey;
+          border-radius: 5px;
+          padding-left: 45px;
+          font-size: 17px;
+          transition: all 0.3s ease;
+
+          &:focus {
+            border-color: var(--color-primary);
+          }
+        }
+
+        .icon {
+          position: absolute;
+          top: 50%;
+          left: 20px;
+          transform: translateY(-50%);
+          color: grey;
+        }
+      }
+
+      .button input {
+        padding-left: 0;
+        background: var(--color-primary);
+        color: #fff;
+        border: none;
+        font-size: 20px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.3s linear;
+
+        &:hover {
+          background: var(--color-selected);
+        }
+      }
+
+      .fas {
+        color: var(--color-dark);
+      }
+    }
+  }
+}

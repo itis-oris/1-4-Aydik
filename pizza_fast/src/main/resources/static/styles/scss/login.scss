@@ -1,0 +1,119 @@
+@use "normalize";
+@use "variables";
+@use "global";
+
+.main {
+  position: absolute;
+}
+
+.main_div {
+  margin: 15vh auto 0 auto;
+  position: relative;
+  width: 365px;
+  padding: 20px 30px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.15);
+  background: var(--color-secondary);
+
+  .title {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+    color: var(--color-dark);
+    margin-bottom: 15px;
+  }
+
+  .error {
+    width: 100%;
+    border: var(--color-selected) 1px solid;
+    position: relative;
+    border-radius: 5px;
+
+    &-background {
+      border-radius: 3px;
+      width: 100%;
+      height: 100%;
+      background: var(--color-primary);
+      opacity: 20%;
+      position: absolute;
+    }
+
+    &-text {
+      color: var(--color-selected);
+      padding: 0.5rem 1rem;
+    }
+  }
+}
+
+form {
+  margin-top: 10px;
+
+  .input_box {
+    height: 50px;
+    width: 100%;
+    position: relative;
+    margin-top: 15px;
+
+    input {
+      height: 100%;
+      width: 100%;
+      outline: none;
+      border: 1px solid lightgrey;
+      border-radius: 5px;
+      padding-left: 45px;
+      font-size: 17px;
+      transition: all 0.3s ease;
+
+      &:focus {
+        border-color: var(--color-primary);
+      }
+    }
+
+    .icon {
+      position: absolute;
+      top: 50%;
+      left: 20px;
+      transform: translateY(-50%);
+      color: grey;
+    }
+  }
+
+  .button input {
+    padding-left: 0;
+    background: var(--color-primary);
+    color: #fff;
+    border: none;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s linear;
+
+    &:hover {
+      background: var(--color-selected);
+    }
+  }
+
+  .sign_up {
+    text-align: center;
+    margin-top: 25px;
+    cursor: pointer;
+
+    .link {
+      text-decoration: none;
+      color: var(--color-dark);
+
+      .red {
+        color: var(--color-selected);
+      }
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.fas {
+  color: var(--color-dark);
+}
+
