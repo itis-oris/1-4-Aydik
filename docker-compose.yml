@@ -4,7 +4,7 @@ services:
     environment:
       POSTGRES_DB: pizza_fast
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: ${DB_PASSWORD} # Указать в .env
+      POSTGRES_PASSWORD: passwd
     ports:
       - "5432:5432"
     networks:
@@ -30,8 +30,8 @@ services:
     environment:
       SMTP_SERVER: smtp.yandex.ru
       SMTP_PORT: 587
-      SMTP_USER: ${SMTP_USER} # Указать в .env
-      SMTP_PASS: ${SMTP_PASS} # Указать в .env
+      SMTP_USER: kvaydarov@kpfu.ru
+      SMTP_PASS: njgdywguipztibdj
     networks:
       - pizza-fast-network
 
