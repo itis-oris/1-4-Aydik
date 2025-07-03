@@ -1,0 +1,39 @@
+services:
+  postgres:
+    image: postgres:14
+    environment:
+      POSTGRES_DB: pizza_fast
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    ports:
+      - "5432:5432"
+    networks:
+      - pizza-fast-network
+
+  app:
+    build:
+      context: ./pizza_fast
+      dockerfile: Dockerfile
+    ports:
+      - "9090:9090"
+    depends_on:
+      - postgres
+    networks:
+      - pizza-fast-network
+
+  python-app:
+    build:
+      context: ./email_sender
+      dockerfile: Dockerfile-python
+    ports:
+      - "5000:5000"
+    environment:
+      SMTP_SERVER: smtp.yandex.ru
+      SMTP_PORT: 587
+      SMTP_USER: ${SMTP_USER}
+      SMTP_PASS: ${SMTP_PASS}
+    networks:
+      - pizza-fast-network
+
+networks:
+  pizza-fast-network:

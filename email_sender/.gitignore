@@ -1,0 +1,67 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*.pdb
+*.egg-info/
+*.egg
+*.log
+
+# Virtual environments
+env/
+venv/
+ENV/
+.venv/
+.ENV/
+
+# VS Code
+.vscode/
+
+# PyCharm
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
+
+# Docker
+*.pid
+*.seed
+*.tar
+*.gz
+*.bak
+*.swp
+*.swo
+*.tmp
+
+# Byte-compiled / optimized / DLL files
+*.so
+*.dll
+*.dylib
+
+# Flask cache
+instance/
+*.db
+
+# Logs
+logs/
+*.log
+
+# Coverage / testing
+htmlcov/
+.tox/
+.coverage
+.cache/
+nosetests.xml
+coverage.xml
+test-results.xml
+pytest_cache/
+junit-*.xml
+
+# Docker build artifacts
+__docker_build__/
